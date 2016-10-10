@@ -1,16 +1,15 @@
-
+var deletable = false;
 
 var container = document.getElementById("container");
-//var list = container.children;
-//var numOfChildren = list.length;
+
+var btn_delete = document.getElementById("removelink");
 
 container.addEventListener("click", function(e) {
 	
 	
 	var par = e.target.parentElement;
 	
-	if(e.target && par.nodeName == "LI") {
-		
+	if(e.target && par.nodeName == "LI" && deletable == true) {
 		
 		while(par.firstChild) {
 			
@@ -19,24 +18,36 @@ container.addEventListener("click", function(e) {
 		}
 		
 		container.removeChild(par);
-		//console.log("e.target removed.");
 		
 	}
 	
 });
 
-
-/*var container = document.getElementById("container");
-container.addEventListener("click", deleteElement, false);
-
-function deleteElement(e) {
+btn_delete.addEventListener("click", function(e) {
 	
-	if(e.target !== e.currentTarget) {
+	
+	deletable = !deletable;
+	if(deletable) {
 		
-		container.removeChild(e.target);
+		btn_delete.value = "Done";
+		
+		for(var i = 0; i < container.childElementCount; i++) {
+			
+			container.children[i].setAttribute("class", "selected");
+			
+		}
+		
+	} else {
+		
+		btn_delete.value = "Remove tab link";
+		
+		for(var i = 0; i < container.childElementCount; i++) {
+			
+			container.children[i].setAttribute("class", "unselected");
+			
+		}
 		
 	}
 	
-	e.stopPropagation();
 	
-}*/
+});
