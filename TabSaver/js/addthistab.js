@@ -9,8 +9,8 @@ document.getElementById("addthistab").onclick = function() {
 		var tabURL = tabs[0].url;
 		
 		//parent list element
-		var pare = document.createElement("li");
-		pare.setAttribute("class", "unselected");
+		var par = document.createElement("li");
+		par.setAttribute("class", "unselected");
 		
 		//p to hold text
 		var p = document.createElement("p");
@@ -21,11 +21,11 @@ document.getElementById("addthistab").onclick = function() {
 		
 		//append the text to the p
 		p.appendChild(node);
-		pare.appendChild(p);
+		par.appendChild(p);
 		//pare.appendChild(div);
 		
 		var list = document.getElementById("container");
-		list.appendChild(pare);
+		list.appendChild(par);
 		
 	});
 	
