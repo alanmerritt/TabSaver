@@ -2,7 +2,7 @@
 
 "manifest_version": 2,
 "name": "Tabsaver",
-"version": "0.3",
+"version": "0.3.1",
 "description": "Save your tabs.",
 
 "browser_action": {
